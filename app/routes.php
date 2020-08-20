@@ -15,9 +15,22 @@ return function (App $app) {
         $response->getBody()->write('Hello world!');
         return $response;
     });
+
     $app->post('/distance/', function($request, $response, $args) {
         $data = $request->getParsedBody();
-        $response->withStatus(200)->getBody()->write(json_encode($data));
+        if (is_null($data) || !isset($data['sum']) || sizeof($data['sum']) < 2) {
+            return null;
+        }
+        $input = $data['sum'];
+        $output = $data['result']['type'] ?? "meters";
+        $totalDistance = 0.00;
+        foreach ($input as $item){
+            $totalDistance += $item['type'] === 'meters' ? $item['value'] : $item ['value'] * 0.95;
+        }
+        if ($output === "yards"){
+            $totalDistance = $totalDistance / 0.95;
+        }
+        $response->withStatus(200)->getBody()->write(json_encode(['type'=>$output,'totalDistance'=>$totalDistance]));
         return $response;
     });
 };
