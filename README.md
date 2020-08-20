@@ -20,3 +20,19 @@
 
 #### Doker-compose restart
 ``` docker-compose down && docker-compose build && docker-compose up --abort-on-container-exit```
+
+### Local environment
+- Basic url:
+```http://localhost:8080/```
+```Hello world!```
+- Users api url:
+```http://localhost:8080/users/1```
+```{
+       "statusCode": 200,
+       "data": {
+           "id": 1,
+           "username": "bill.gates",
+           "firstName": "Bill",
+           "lastName": "Gates"
+       }
+   }```
