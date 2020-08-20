@@ -25,3 +25,23 @@
 - Basic url:
 ```http://localhost:8080/```
 ```Hello world!```
+### Distance EndPoint
+* url: ```http://localhost:8080/distance/```
+* method: ```POST```
+* body:
+```{
+     "sum": [
+       {
+         "type": "meters",
+         "value": 1.11
+       },
+       {
+         "type": "meters",
+         "value": 1.33
+       }
+     ],
+     "result": {
+       "type": "yards"
+     }
+   }
+```

@@ -15,5 +15,9 @@ return function (App $app) {
         $response->getBody()->write('Hello world!');
         return $response;
     });
-
+    $app->post('/distance/', function($request, $response, $args) {
+        $data = $request->getParsedBody();
+        $response->withStatus(200)->getBody()->write(json_encode($data));
+        return $response;
+    });
 };
