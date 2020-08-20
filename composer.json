@@ -47,7 +47,7 @@
         }
     },
     "scripts": {
-        "start": "php -S localhost:8080 -t public",
+        "start": "php -S localhost:8080 -t public/ -ddisplay_errors=1 -dzned_extension=xdebug.so",
         "test": "phpunit"
     }
 }
