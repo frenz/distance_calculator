@@ -21,6 +21,20 @@
 #### Doker-compose restart
 ``` docker-compose down && docker-compose build && docker-compose up --abort-on-container-exit```
 
+#### Doker-compose exec php ash
+#### run tests
+``` docker-compose exec php ash ```
+``` 08c9dee51c5c:/var/www# phpunit ```
+#### expected results
+``` PHPUnit 8.5.8 by Sebastian Bergmann and contributors.
+   
+   ......                                                              6 / 6 (100%)
+   
+   Time: 9.09 seconds, Memory: 6.00 MB 
+```
+
+
+
 ### Local environment
 - Basic url:
 ```http://localhost:8080/```
