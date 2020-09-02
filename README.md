@@ -59,3 +59,8 @@
      }
    }
 ```
+### Improvements
+- add unit test for all public methods
+- improve exceptions and test it
+- add action tests
+- polish distance class storing only meters and using unit of measure as parameter
